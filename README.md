@@ -2,7 +2,7 @@
 
 Production-ready Laravel starter template with authentication, admin panel, RBAC, and multi-theme support.
 
-![version](https://img.shields.io/badge/version-1.5.0-blue) ![laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white) ![php](https://img.shields.io/badge/PHP-8.2+-777BB4?logo=php&logoColor=white) ![tailwind](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white) ![license](https://img.shields.io/badge/license-MIT-green)
+![version](https://img.shields.io/badge/version-1.5.0-blue) ![laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white) ![php](https://img.shields.io/badge/PHP-8.2+-777BB4?logo=php&logoColor=white) ![tailwind](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white) ![license](https://img.shields.io/badge/license-GPL--2.0-blue)
 
 [Changelog](CHANGELOG.md) | [Deployment](DEPLOYMENT.md) | [Routes](ROUTES.md) | [Architecture](ARCHITECTURE.md)
 
@@ -175,16 +175,6 @@ php artisan test          # Run tests
 npm run build             # Build frontend
 composer validate         # Validate composer.json
 ```
-
----
-
-## Screenshot
-
-### Home
-<img width="1919" height="958" alt="Screenshot 2026-05-09 221537" src="https://github.com/user-attachments/assets/5ae2ab46-84ae-4629-8f01-de1261de1c25" />
-
-### Admin Console
-<img width="1913" height="959" alt="Screenshot 2026-05-09 221548" src="https://github.com/user-attachments/assets/cf6064c5-29b1-478f-9964-6f64faef9742" />
 
 ---
 
