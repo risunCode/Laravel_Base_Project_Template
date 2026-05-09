@@ -4,6 +4,9 @@ Production-ready Laravel starter template with authentication, admin panel, RBAC
 
 **v1.5.0** | [Changelog](CHANGELOG.md) | [Deployment](DEPLOYMENT.md) | [Routes](ROUTES.md) | [Architecture](ARCHITECTURE.md)
 
+![Home](https://github.com/user-attachments/assets/44f659fc-fbe2-4f22-b0a4-6632ea874871)
+![Admin](https://github.com/user-attachments/assets/671a42a5-4a08-4303-8c6a-39217c33503e)
+
 ---
 
 ## Stack
