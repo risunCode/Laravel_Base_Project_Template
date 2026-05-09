@@ -2,10 +2,13 @@
 
 Production-ready Laravel starter template with authentication, admin panel, RBAC, and multi-theme support.
 
-**v1.5.0** | [Changelog](CHANGELOG.md) | [Deployment](DEPLOYMENT.md) | [Routes](ROUTES.md) | [Architecture](ARCHITECTURE.md)
+![version](https://img.shields.io/badge/version-1.5.0-blue) ![laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white) ![php](https://img.shields.io/badge/PHP-8.2+-777BB4?logo=php&logoColor=white) ![tailwind](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white) ![license](https://img.shields.io/badge/license-MIT-green)
 
-![Home](https://github.com/user-attachments/assets/44f659fc-fbe2-4f22-b0a4-6632ea874871)
-![Admin](https://github.com/user-attachments/assets/671a42a5-4a08-4303-8c6a-39217c33503e)
+[Changelog](CHANGELOG.md) | [Deployment](DEPLOYMENT.md) | [Routes](ROUTES.md) | [Architecture](ARCHITECTURE.md)
+
+| Home | Admin |
+|------|-------|
+| ![Home](https://github.com/user-attachments/assets/44f659fc-fbe2-4f22-b0a4-6632ea874871) | ![Admin](https://github.com/user-attachments/assets/671a42a5-4a08-4303-8c6a-39217c33503e) |
 
 ---
 
