@@ -18,6 +18,9 @@
                 <i class="bx bx-user absolute left-4 top-1/2 -translate-y-1/2 text-xl opacity-40 group-focus-within:opacity-100 transition-opacity" style="color: var(--text-primary);"></i>
                 <input type="text" name="login" id="login" value="{{ old('login') }}" required autofocus class="w-full pl-12 pr-4 py-4 rounded-2xl border focus:ring-2 focus:ring-[var(--accent-color)]/20 transition-all outline-none" style="background-color: var(--bg-input); border-color: var(--border-color); color: var(--text-primary);" placeholder="email or username">
             </div>
+            @error('login')
+                <p class="text-xs text-red-500 mt-1 ml-1 font-bold">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="space-y-1.5" x-data="{ show: false }">

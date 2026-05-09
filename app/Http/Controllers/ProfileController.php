@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Password;
 
@@ -24,8 +22,7 @@ class ProfileController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255', 'unique:users,username,' . $user->id],
             'email' => ['required', 'email', 'max:255', 'unique:users,email,' . $user->id],
-            'profile_picture' => ['nullable', 'image', 'max:15360'],
-            'cropped_image' => ['nullable', 'string', 'max:2097152'], // ~1.5MB decoded max
+            'cropped_image' => ['nullable', 'string', 'max:2097152'],
         ]);
 
         if ($request->filled('cropped_image')) {
@@ -74,7 +71,7 @@ class ProfileController extends Controller
         ]);
 
         Auth::user()->update([
-            'password' => Hash::make($validated['password']),
+            'password' => $validated['password'],
         ]);
 
         return back()->with('success', 'Password updated successfully.');

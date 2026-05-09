@@ -48,7 +48,7 @@ function setLanguage(language) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'auto');
+    const theme = localStorage.getItem('theme') || 'auto';
     updateThemeChecks(theme);
 });
 </script>

@@ -12,19 +12,6 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
-        if ($request->expectsJson()) {
-            return null;
-        }
-
-        // Check if user was previously authenticated (session expired)
-        if ($request->hasSession() && $request->session()->has('_previous_user')) {
-            $request->session()->flash('session_expired', true);
-        } else {
-            // Guest trying to access protected page
-            $request->session()->flash('auth_required', true);
-            $request->session()->flash('intended_url', $request->url());
-        }
-
-        return route('login');
+        return $request->expectsJson() ? null : route('login');
     }
 }

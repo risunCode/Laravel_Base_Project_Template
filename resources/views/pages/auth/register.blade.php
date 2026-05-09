@@ -18,6 +18,9 @@
                 <i class="bx bx-user absolute left-4 top-1/2 -translate-y-1/2 text-xl opacity-40 group-focus-within:opacity-100 transition-opacity" style="color: var(--text-primary);"></i>
                 <input type="text" name="name" id="name" value="{{ old('name') }}" required autofocus class="w-full pl-12 pr-4 py-4 rounded-2xl border focus:ring-2 focus:ring-[var(--accent-color)]/20 transition-all outline-none" style="background-color: var(--bg-input); border-color: var(--border-color); color: var(--text-primary);" placeholder="John Doe">
             </div>
+            @error('name')
+                <p class="text-xs text-red-500 mt-1 ml-1 font-bold">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="space-y-1.5">
@@ -26,6 +29,9 @@
                 <i class="bx bx-at absolute left-4 top-1/2 -translate-y-1/2 text-xl opacity-40 group-focus-within:opacity-100 transition-opacity" style="color: var(--text-primary);"></i>
                 <input type="text" name="username" id="username" value="{{ old('username') }}" required class="w-full pl-12 pr-4 py-4 rounded-2xl border focus:ring-2 focus:ring-[var(--accent-color)]/20 transition-all outline-none" style="background-color: var(--bg-input); border-color: var(--border-color); color: var(--text-primary);" placeholder="johndoe">
             </div>
+            @error('username')
+                <p class="text-xs text-red-500 mt-1 ml-1 font-bold">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="space-y-1.5">
@@ -34,6 +40,9 @@
                 <i class="bx bx-envelope absolute left-4 top-1/2 -translate-y-1/2 text-xl opacity-40 group-focus-within:opacity-100 transition-opacity" style="color: var(--text-primary);"></i>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" required class="w-full pl-12 pr-4 py-4 rounded-2xl border focus:ring-2 focus:ring-[var(--accent-color)]/20 transition-all outline-none" style="background-color: var(--bg-input); border-color: var(--border-color); color: var(--text-primary);" placeholder="name@company.com">
             </div>
+            @error('email')
+                <p class="text-xs text-red-500 mt-1 ml-1 font-bold">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -46,6 +55,9 @@
                         <i class="bx" :class="show ? 'bx-hide' : 'bx-show'"></i>
                     </button>
                 </div>
+                @error('password')
+                    <p class="text-xs text-red-500 mt-1 ml-1 font-bold">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="space-y-1.5" x-data="{ show: false }">

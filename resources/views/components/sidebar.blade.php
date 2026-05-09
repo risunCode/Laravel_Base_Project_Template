@@ -55,21 +55,49 @@
             @endif
         </div>
 
-        <div class="pt-4 mt-4 border-t border-white/10">
-            <a href="{{ route('landing') }}" 
-               class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-white/10"
-               style="color: var(--sidebar-text-muted);">
-                <i class="bx bx-world text-xl"></i>
-                <span class="font-bold">{{ __('View Public Site') }}</span>
-            </a>
-            
-            <form action="{{ route('logout') }}" method="POST" class="mt-1">
-                @csrf
-                <button type="submit" class="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-red-400 hover:bg-red-500/10 transition-all">
-                    <i class="bx bx-log-out text-xl"></i>
-                    <span class="font-bold">{{ __('Logout') }}</span>
-                </button>
-            </form>
+        @auth
+        <div class="pt-4 mt-4 border-t border-white/10 relative" x-data="{ open: false }" @click.away="open = false">
+            <!-- Expand-up menu -->
+            <div x-show="open" x-cloak
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                 x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                 x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+                 class="absolute bottom-full left-0 right-0 mb-2 mx-2 rounded-xl border border-white/10 overflow-hidden shadow-xl"
+                 style="background: color-mix(in srgb, var(--bg-sidebar) 95%, white 5%);">
+                <a href="{{ route('profile.show') }}" class="flex items-center gap-3 px-4 py-3 text-sm font-bold text-white/70 hover:text-white hover:bg-white/10 transition-all">
+                    <i class="bx bx-user text-lg"></i>
+                    {{ __('Profile') }}
+                </a>
+                <a href="{{ route('landing') }}" class="flex items-center gap-3 px-4 py-3 text-sm font-bold text-white/70 hover:text-white hover:bg-white/10 transition-all">
+                    <i class="bx bx-world text-lg"></i>
+                    {{ __('View Public Site') }}
+                </a>
+                <div class="border-t border-white/10">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="flex items-center gap-3 w-full px-4 py-3 text-sm font-bold text-red-400 hover:bg-red-500/10 transition-all">
+                            <i class="bx bx-log-out text-lg"></i>
+                            {{ __('Logout') }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Profile card trigger -->
+            <button @click="open = !open" class="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/10 transition-all cursor-pointer">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-semibold text-sm shrink-0" style="background-color: var(--accent-color);">
+                    {{ auth()->user()->initials }}
+                </div>
+                <div class="flex-1 text-left min-w-0">
+                    <p class="text-sm font-bold text-white truncate">{{ auth()->user()->name }}</p>
+                    <p class="text-[11px] text-white/40 truncate">{{ auth()->user()->email }}</p>
+                </div>
+                <i class="bx text-white/40 text-lg shrink-0 transition-transform duration-200" :class="open ? 'bx-chevron-down' : 'bx-chevron-up'"></i>
+            </button>
         </div>
+        @endauth
     </nav>
 </aside>
